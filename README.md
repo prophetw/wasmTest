@@ -1,4 +1,4 @@
-# 配置环境
+# Env config
 > ubuntu 20
 > node 14 
 
