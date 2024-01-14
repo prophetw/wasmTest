@@ -4,8 +4,9 @@
 
 extern "C" {
     EMSCRIPTEN_KEEPALIVE
-    const time_t getCurrentTime() {
+    const char* getCurrentTime() {
         time_t now = time(0);
-        return now;
+        char* dt = ctime(&now);
+        return dt;
     }
 }

@@ -7,6 +7,7 @@
 </head>
 <body>
   <script>
+    // 用户可以篡改这个信息
     Date.now = function(){
       return 1705195194028
     }
@@ -17,7 +18,8 @@
   Module.onRuntimeInitialized = () => {
     let currentTime = Module.ccall(
       'getCurrentTime', // C 函数的名称
-      'number' ,         // 返回类型
+      'string' ,         // 返回类型
+      // 'number' ,         // 返回类型
       [],               // 参数类型
       []                // 参数
     );
