@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+  <script>
+    Date.now = function(){
+      return 1705195194028
+    }
+  </script>
+	
+<script src="./build/getTime.js"></script>
+<script>
+  Module.onRuntimeInitialized = () => {
+    let currentTime = Module.ccall(
+      'getCurrentTime', // C 函数的名称
+      'number' ,         // 返回类型
+      [],               // 参数类型
+      []                // 参数
+    );
+    console.log(currentTime);
+  };
+</script>
+</body>
+</html>
